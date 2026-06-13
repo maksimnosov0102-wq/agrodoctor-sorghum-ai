@@ -1,1 +1,40 @@
-
+[
+  {
+    "trial_id": 1,
+    "year": 2024,
+    "location": "Синельниківська СДС",
+    "region": "Дніпропетровська область",
+    "hybrid": "F1(Низькоросле81с × Карликове45)",
+    "replication": 1,
+    "plot_area_m2": 5,
+    "green_mass_t_ha": 78.1,
+    "dry_matter_percent": 28.4,
+    "sugar_percent": 18.2,
+    "biofuel_t_ha": 21.5,
+    "energy_output_gj_ha": 410,
+    "plant_height_cm": 265,
+    "vegetation_days": 128,
+    "lodging_score": 1,
+    "disease_resistance_score": 8,
+    "notes": "Найкращий гібрид за врожайністю зеленої маси"
+  },
+  {
+    "trial_id": 2,
+    "year": 2024,
+    "location": "Синельниківська СДС",
+    "region": "Дніпропетровська область",
+    "hybrid": "F1(Кафрське кормове186с × Карликове45)",
+    "replication": 1,
+    "plot_area_m2": 5,
+    "green_mass_t_ha": 72.4,
+    "dry_matter_percent": 29.1,
+    "sugar_percent": 17.6,
+    "biofuel_t_ha": 20.3,
+    "energy_output_gj_ha": 392,
+    "plant_height_cm": 255,
+    "vegetation_days": 125,
+    "lodging_score": 2,
+    "disease_resistance_score": 7,
+    "notes": "Стабільна продуктивність"
+  }
+]
