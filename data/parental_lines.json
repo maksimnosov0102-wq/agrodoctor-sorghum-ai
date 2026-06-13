@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "line_code": "Низькоросле81с",
+    "type": "A-line",
+    "origin": "ІЗК НААН",
+    "plant_height_cm": 120,
+    "vegetation_days": 115,
+    "sugar_percent": 18.5,
+    "notes": "Материнська лінія"
+  },
+  {
+    "id": 2,
+    "line_code": "Карликове45",
+    "type": "R-line",
+    "origin": "ІЗК НААН",
+    "plant_height_cm": 140,
+    "vegetation_days": 118,
+    "sugar_percent": 17.0,
+    "notes": "Батьківська лінія"
+  }
+]
