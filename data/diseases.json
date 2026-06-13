@@ -1,1 +1,14 @@
-
+[
+  {
+    "id": 1,
+    "name": "Пухирчаста сажка",
+    "pathogen": "Sporisorium sorghi",
+    "severity": "high"
+  },
+  {
+    "id": 2,
+    "name": "Антракноз",
+    "pathogen": "Colletotrichum graminicola",
+    "severity": "medium"
+  }
+]
