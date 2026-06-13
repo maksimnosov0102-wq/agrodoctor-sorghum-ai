@@ -7,17 +7,42 @@
 <style>
 
 body{
-font-family:Arial;
+font-family:Arial,sans-serif;
 background:#f4f4f4;
-margin:40px;
+margin:0;
+}
+
+header{
+background:#1b4332;
+padding:15px;
+}
+
+nav{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+padding:30px;
 }
 
 .card{
 background:white;
 padding:20px;
 border-radius:10px;
-margin-bottom:20px;
-box-shadow:0 0 10px rgba(0,0,0,.1);
+margin-top:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+color:#1b4332;
 }
 
 </style>
@@ -26,29 +51,52 @@ box-shadow:0 0 10px rgba(0,0,0,.1);
 
 <body>
 
+<header>
+
+<nav>
+<a href="#">🏠 Головна</a>
+<a href="#">🌱 Гібриди</a>
+<a href="#">🧬 Лінії</a>
+<a href="#">📊 Польові досліди</a>
+<a href="#">🦠 Хвороби</a>
+<a href="#">🚜 Технології</a>
+<a href="#">🤖 AI-консультант</a>
+</nav>
+
+</header>
+
+<div class="container">
+
 <h1>AgroDoctor Sorghum AI</h1>
 
 <div class="card">
+
 <h2>Гібриди сорго</h2>
-<div id="hybrids"></div>
+
+<div id="hybrids">
+Завантаження...
+</div>
+
+</div>
+
 </div>
 
 <script>
 
 fetch('data/hybrids.json')
-.then(r=>r.json())
-.then(data=>{
+.then(response => response.json())
+.then(data => {
 
 let html='';
 
-data.forEach(h=>{
+data.forEach(item=>{
 
 html += `
 <p>
-<b>${h.hybrid_name}</b><br>
-Урожайність: ${h.green_mass_t_ha} т/га<br>
-Цукристість: ${h.sugar_percent}%<br>
-Енергія: ${h.energy_gj_ha} ГДж/га
+<b>${item.hybrid_name}</b><br>
+Урожайність: ${item.green_mass_t_ha} т/га<br>
+Цукристість: ${item.sugar_percent}%<br>
+Енергія: ${item.energy_gj_ha} ГДж/га
 </p>
 <hr>
 `;
