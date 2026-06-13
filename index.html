@@ -2,111 +2,460 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AgroDoctor Sorghum AI</title>
 
 <style>
+:root{
+  --green:#1b4332;
+  --light:#f4f8f3;
+  --accent:#52b788;
+  --dark:#081c15;
+  --white:#fff;
+}
+
+*{
+  box-sizing:border-box;
+}
 
 body{
-font-family:Arial,sans-serif;
-background:#f4f4f4;
-margin:0;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--light);
+  color:var(--dark);
 }
 
 header{
-background:#1b4332;
-padding:15px;
+  background:var(--green);
+  color:white;
+  padding:18px 40px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 nav{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
+.logo{
+  font-size:22px;
+  font-weight:bold;
 }
 
-.container{
-padding:30px;
+.menu a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-weight:bold;
+}
+
+.hero{
+  min-height:520px;
+  background:
+  linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+  url("https://images.unsplash.com/photo-1597678424736-c4f6b1247c16?auto=format&fit=crop&w=1600&q=80");
+  background-size:cover;
+  background-position:center;
+  color:white;
+  display:flex;
+  align-items:center;
+  padding:60px 40px;
+}
+
+.hero-content{
+  max-width:800px;
+}
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:20px;
+  line-height:1.5;
+}
+
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  padding:14px 24px;
+  border-radius:8px;
+  text-decoration:none;
+  margin-top:20px;
+  font-weight:bold;
+}
+
+section{
+  padding:50px 40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
 }
 
 .card{
-background:white;
-padding:20px;
-border-radius:10px;
-margin-top:20px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
 }
 
-h1{
-color:#1b4332;
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
 }
 
+.card-content{
+  padding:20px;
+}
+
+.card h3{
+  color:var(--green);
+}
+
+.table-box{
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  overflow:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:12px;
+  border-bottom:1px solid #ddd;
+  text-align:left;
+}
+
+th{
+  background:#d8f3dc;
+}
+
+.chat-box{
+  background:white;
+  max-width:900px;
+  margin:auto;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+}
+
+.chat-window{
+  height:350px;
+  overflow-y:auto;
+  background:#eef7ef;
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.message{
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:10px;
+  max-width:80%;
+}
+
+.user{
+  background:#2d6a4f;
+  color:white;
+  margin-left:auto;
+}
+
+.bot{
+  background:white;
+  color:#222;
+}
+
+.chat-input{
+  display:flex;
+  gap:10px;
+}
+
+.chat-input input{
+  flex:1;
+  padding:14px;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+
+.chat-input button{
+  padding:14px 20px;
+  background:var(--green);
+  color:white;
+  border:0;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+footer{
+  background:var(--dark);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+
+@media(max-width:700px){
+  .hero h1{
+    font-size:32px;
+  }
+
+  .menu{
+    margin-top:15px;
+  }
+
+  .menu a{
+    display:inline-block;
+    margin:6px;
+  }
+}
 </style>
-
 </head>
 
 <body>
 
 <header>
-
 <nav>
-<a href="#">🏠 Головна</a>
-<a href="#">🌱 Гібриди</a>
-<a href="#">🧬 Лінії</a>
-<a href="#">📊 Польові досліди</a>
-<a href="#">🦠 Хвороби</a>
-<a href="#">🚜 Технології</a>
-<a href="#">🤖 AI-консультант</a>
+  <div class="logo">AgroDoctor Sorghum AI</div>
+  <div class="menu">
+    <a href="#home">Головна</a>
+    <a href="#hybrids">Гібриди</a>
+    <a href="#lines">Лінії</a>
+    <a href="#trials">Досліди</a>
+    <a href="#tech">Технології</a>
+    <a href="#ai">AI</a>
+    <a href="#contacts">Контакти</a>
+  </div>
 </nav>
-
 </header>
 
-<div class="container">
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Перша AI-платформа з селекції та технологій вирощування сорго</h1>
+    <p>
+      AgroDoctor Sorghum AI — цифрова система для аналізу гібридів, батьківських ліній,
+      польових дослідів, технологій вирощування та біоенергетичного потенціалу сорго.
+    </p>
+    <a href="#ai" class="btn">Запитати AI-консультанта</a>
+  </div>
+</section>
 
-<h1>AgroDoctor Sorghum AI</h1>
+<section>
+<h2>Основні модулі платформи</h2>
 
+<div class="grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80">
+    <div class="card-content">
+      <h3>Селекція сорго</h3>
+      <p>Аналіз гібридів, ліній, схрещувань і продуктивності.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=900&q=80">
+    <div class="card-content">
+      <h3>Польові досліди</h3>
+      <p>Облік урожайності, зеленої маси, цукристості та сухої речовини.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80">
+    <div class="card-content">
+      <h3>Біоенергетика</h3>
+      <p>Розрахунок біомаси, енергії, біоетанолу та твердого палива.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="hybrids">
+<h2>Каталог гібридів сорго</h2>
+<div class="table-box">
+<table>
+<thead>
+<tr>
+<th>Гібрид</th>
+<th>Урожайність зеленої маси</th>
+<th>Цукристість</th>
+<th>Енергія</th>
+</tr>
+</thead>
+<tbody id="hybridsTable">
+<tr><td colspan="4">Завантаження...</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="lines">
+<h2>Батьківські лінії</h2>
+<div class="grid">
+  <div class="card">
+    <div class="card-content">
+      <h3>Низькоросле 81с</h3>
+      <p>Материнська лінія. Перспективна для створення низькорослих гібридів.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <h3>Карликове 45</h3>
+      <p>Батьківська лінія. Використовується у селекції цукрового сорго.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="trials">
+<h2>Польові досліди</h2>
 <div class="card">
-
-<h2>Гібриди сорго</h2>
-
-<div id="hybrids">
-Завантаження...
+  <div class="card-content">
+    <h3>Синельниківська СДС, 2024</h3>
+    <p>Оцінка гібридів сорго за зеленою масою, сухою речовиною, цукристістю та енергетичним виходом.</p>
+  </div>
 </div>
+</section>
 
-</div>
+<section id="tech">
+<h2>Технології вирощування</h2>
+<div class="grid">
+  <div class="card">
+    <div class="card-content">
+      <h3>Густота стояння</h3>
+      <p>Цукрове сорго: 200–250 тис. рослин/га.</p>
+    </div>
+  </div>
 
+  <div class="card">
+    <div class="card-content">
+      <h3>Ширина міжряддя</h3>
+      <p>Рекомендовано 45–70 см залежно від технології та вологозабезпечення.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <h3>Збирання</h3>
+      <p>Оптимальна фаза — молочно-воскова стиглість зерна.</p>
+    </div>
+  </div>
 </div>
+</section>
+
+<section id="ai">
+<h2>AI-консультант SorghumGPT</h2>
+
+<div class="chat-box">
+  <div class="chat-window" id="chatWindow">
+    <div class="message bot">
+      Вітаю. Я AgroDoctor Sorghum AI. Запитайте мене про сорго, гібриди, лінії, технології вирощування або біоенергетику.
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input id="userInput" placeholder="Наприклад: Які гібриди сорго придатні для біоенергетики?">
+    <button onclick="sendMessage()">Надіслати</button>
+  </div>
+</div>
+</section>
+
+<section id="contacts">
+<h2>Контакти</h2>
+<div class="card">
+  <div class="card-content">
+    <p><b>Автор:</b> Максим Геннадійович Носов</p>
+    <p><b>Напрям:</b> селекція, насінництво та технології вирощування сорго</p>
+    <p><b>Проєкт:</b> AgroDoctor Sorghum AI</p>
+  </div>
+</div>
+</section>
+
+<footer>
+AgroDoctor Sorghum AI © 2026
+</footer>
 
 <script>
-
 fetch('data/hybrids.json')
 .then(response => response.json())
 .then(data => {
+  let html = '';
 
-let html='';
+  data.forEach(h => {
+    html += `
+      <tr>
+        <td>${h.hybrid_name || h.name}</td>
+        <td>${h.green_mass_t_ha || h.yield_green_mass_t_ha || '-'} т/га</td>
+        <td>${h.sugar_percent || '-'}%</td>
+        <td>${h.energy_gj_ha || '-'} ГДж/га</td>
+      </tr>
+    `;
+  });
 
-data.forEach(item=>{
-
-html += `
-<p>
-<b>${item.hybrid_name}</b><br>
-Урожайність: ${item.green_mass_t_ha} т/га<br>
-Цукристість: ${item.sugar_percent}%<br>
-Енергія: ${item.energy_gj_ha} ГДж/га
-</p>
-<hr>
-`;
-
+  document.getElementById('hybridsTable').innerHTML = html;
+})
+.catch(() => {
+  document.getElementById('hybridsTable').innerHTML =
+  '<tr><td colspan="4">Не вдалося завантажити базу гібридів.</td></tr>';
 });
 
-document.getElementById('hybrids').innerHTML=html;
+async function sendMessage(){
+  const input = document.getElementById('userInput');
+  const text = input.value.trim();
 
-});
+  if(!text) return;
 
+  addMessage(text, 'user');
+  input.value = '';
+
+  addMessage('AgroDoctor Sorghum AI аналізує запит...', 'bot');
+
+  try{
+    const response = await fetch('/api/chat', {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        message:text
+      })
+    });
+
+    const data = await response.json();
+
+    const botMessages = document.querySelectorAll('.message.bot');
+    botMessages[botMessages.length - 1].innerHTML =
+      data.answer || 'Не вдалося отримати відповідь.';
+
+  }catch(error){
+    const botMessages = document.querySelectorAll('.message.bot');
+    botMessages[botMessages.length - 1].innerHTML =
+      'AI працює тільки у версії сайту, розгорнутій через Vercel.';
+  }
+}
+
+function addMessage(text,type){
+  const chat = document.getElementById('chatWindow');
+  const div = document.createElement('div');
+  div.className = 'message ' + type;
+  div.innerHTML = text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
 </script>
 
 </body>
