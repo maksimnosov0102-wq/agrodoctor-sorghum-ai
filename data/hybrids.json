@@ -1,12 +1,15 @@
 [
   {
     "id": 1,
-    "name": "F1(Низькоросле81с×Карликове45)",
+    "hybrid_name": "F1(Низькоросле81с × Карликове45)",
+    "mother_line": "Низькоросле81с",
+    "father_line": "Карликове45",
     "year": 2024,
-    "type": "Цукрове сорго",
-    "yield_green_mass_t_ha": 78.1,
-    "dry_matter_percent": null,
-    "sugar_percent": null,
-    "location": "Синельниківська СДС"
+    "green_mass_t_ha": 78.1,
+    "dry_matter_percent": 28.4,
+    "sugar_percent": 18.2,
+    "energy_gj_ha": 410,
+    "region": "Синельникове",
+    "status": "experimental"
   }
 ]
