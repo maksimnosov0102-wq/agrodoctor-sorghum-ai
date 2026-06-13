@@ -1,1 +1,9 @@
-
+[
+  {
+    "id": 1,
+    "technology": "Цукрове сорго",
+    "seeding_rate": 220000,
+    "row_spacing_cm": 70,
+    "harvest_stage": "молочно-воскова стиглість"
+  }
+]
