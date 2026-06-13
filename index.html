@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>AgroDoctor Sorghum AI</title>
 
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+margin:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>AgroDoctor Sorghum AI</h1>
+
+<div class="card">
+<h2>Гібриди сорго</h2>
+<div id="hybrids"></div>
+</div>
+
+<script>
+
+fetch('data/hybrids.json')
+.then(r=>r.json())
+.then(data=>{
+
+let html='';
+
+data.forEach(h=>{
+
+html += `
+<p>
+<b>${h.hybrid_name}</b><br>
+Урожайність: ${h.green_mass_t_ha} т/га<br>
+Цукристість: ${h.sugar_percent}%<br>
+Енергія: ${h.energy_gj_ha} ГДж/га
+</p>
+<hr>
+`;
+
+});
+
+document.getElementById('hybrids').innerHTML=html;
+
+});
+
+</script>
+
+</body>
+</html>
